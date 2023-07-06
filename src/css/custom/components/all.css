@@ -1,0 +1,123 @@
+@layer components {
+    .c-btn {
+      transition: all 0.3s;
+  
+      @apply flex items-center justify-center rounded-full border-3 py-4 px-8 text-sm font-semibold leading-none text-navy-700 outline-none;
+  
+      &:focus {
+        @apply outline-none;
+      }
+  
+      &.c-nav-link--active {
+        &::after {
+          @apply hidden;
+        }
+      }
+    }
+  
+    .c-btn--primary {
+      @apply border-reso-dark text-navy-700;
+  
+      &:hover,
+      &:focus {
+        @apply border-navy-700;
+      }
+    }
+  
+    [x-cloak] {
+      display: none;
+    }
+  
+    .c-floating-button {
+      @apply relative flex flex-wrap items-center justify-end;
+  
+      &:focus {
+        outline: none;
+      }
+  
+      &:hover {
+        .c-floating-icon__text {
+          @screen md {
+            @apply pr-10 pl-2 opacity-100;
+  
+            width: 200px;
+  
+            span {
+              opacity: 1;
+              transition: opacity 0.4s 0.2s ease;
+            }
+          }
+        }
+      }
+    }
+  
+    .c-floating-icon__icon {
+      @apply relative z-20 flex flex-wrap items-center justify-center rounded-full bg-reso-dark p-2;
+  
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+      box-shadow: -1px 0 2px rgba(0, 0, 0, 0.2);
+  
+      svg {
+        width: 16px;
+        height: auto;
+        max-width: 100%;
+  
+        path,
+        g {
+          fill: #fff;
+        }
+      }
+    }
+  
+    .c-floating-icon__text {
+      @apply absolute right-0 top-0 z-10 rounded-full bg-reso-dark text-center text-sm text-white opacity-0;
+  
+      vertical-align: middle;
+      transition: opacity 0.3s, width 0.4s;
+      height: 100%;
+      width: 0;
+      text-align: center;
+      line-height: 40px;
+  
+      span {
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+    }
+  
+    #hubspot-messages-iframe-container {
+      transform: translate(8px, 88px);
+  
+      @media (max-width: 640px) {
+        &.chatbox-opened {
+          transform: translate(0, 0);
+        }
+      }
+  
+      @media (max-height: 640px) {
+        &.chatbox-opened {
+          transform: translate(0, 0);
+        }
+      }
+    }
+  
+    .c-chat-close-btn {
+      position: absolute;
+      z-index: 5;
+      right: 25px;
+      top: 55px;
+      @apply hidden;
+  
+      @screen sm {
+        @apply block;
+      }
+  
+      @media (max-height: 640px) {
+        top: 40px;
+        display: none;
+      }
+    }
+  }
+  

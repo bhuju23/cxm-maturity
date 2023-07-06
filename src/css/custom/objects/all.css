@@ -1,0 +1,22 @@
+@layer components {
+    .o-container {
+      @apply mx-auto px-6;
+  
+      @screen md {
+        @apply px-3;
+      }
+  
+      @screen lg {
+        max-width: 1240px;
+      }
+    }
+  
+    .o-row {
+      @apply -mx-6;
+  
+      @screen md {
+        @apply -mx-3;
+      }
+    }
+  }
+  
